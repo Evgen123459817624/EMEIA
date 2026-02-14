@@ -6,6 +6,7 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  StatusBar,
   SafeAreaView,
 } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -20,6 +21,8 @@ export default function LoginScreen({ navigation }: Props) {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="light-content" backgroundColor="#000000" />
+
       <View style={styles.innerContainer}>
         <Text style={styles.logo}>Home Page </Text>
         <Text style={styles.paragraph}>Tăt normal. Eu am început lucrul</Text>
