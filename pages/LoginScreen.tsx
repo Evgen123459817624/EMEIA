@@ -59,7 +59,7 @@ export default function LoginScreen({ navigation }: Props) {
       // 1. Save the token so the user stays logged in
       await SecureStore.setItemAsync("user_token", data.token);
 
-      navigation.replace("Home");
+      navigation.replace("SelectUser");
     } catch (error) {
       Alert.alert(
         "Access Denied",
@@ -107,7 +107,7 @@ export default function LoginScreen({ navigation }: Props) {
             <ActivityIndicator color="#000" />
           ) : (
             <Text style={styles.loginButtonText}>LOGIN</Text>
-          )}{" "}
+          )}
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -122,7 +122,7 @@ export default function LoginScreen({ navigation }: Props) {
         {/* just for testing, not part of the UI */}
         <TouchableOpacity
           style={styles.linkContainer}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("SelectUser")}
         >
           <Text style={styles.hyperlinkText}>
             Go to Home page (just for testing, will be removed later)

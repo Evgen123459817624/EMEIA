@@ -3,14 +3,18 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import LoginScreen from "./pages/LoginScreen";
-import HomeScreen from "./pages/HomeScreen";
+import SelectUserScreen from "./pages/SelectUserScreen";
 import RegisterScreen from "./pages/RegisterScreen";
+import ProfileLoginScreen from "./pages/UserLoginScreen";
+import MainAppAdminScreen from "./pages/MainAppAdminScreen";
 
 // Definim ce ecrane avem și ce parametri primesc (momentan niciunul)
 export type RootStackParamList = {
   Login: undefined;
-  Home: undefined;
+  SelectUser: undefined;
   Register: undefined;
+  ProfileLogin: { user: { id: string; name: string; type: string } };
+  MainAppAdminScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -25,13 +29,23 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+          name="SelectUser"
+          component={SelectUserScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Register"
           component={RegisterScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ProfileLogin"
+          component={ProfileLoginScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="MainAppAdminScreen"
+          component={MainAppAdminScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

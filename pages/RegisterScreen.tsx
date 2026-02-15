@@ -114,13 +114,13 @@ export default function LoginScreen({ navigation }: Props) {
             <ActivityIndicator color="#000" />
           ) : (
             <Text style={styles.loginButtonText}>SIGN-UP</Text>
-          )}{" "}
+          )}
         </TouchableOpacity>
 
         {/* Hyperlink to Home */}
         <TouchableOpacity
           style={styles.linkContainer}
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => navigation.goBack()}
         >
           <Text style={styles.hyperlinkText}>
             I have an account already, take me to Login
@@ -134,7 +134,7 @@ export default function LoginScreen({ navigation }: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000000", // True Black
+    backgroundColor: "#000000",
   },
   innerContainer: {
     flex: 1,
@@ -144,24 +144,24 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 32,
     fontWeight: "900",
-    color: "#FF8C00", // Bright Orange
+    color: "#FF8C00",
     textAlign: "center",
     marginBottom: 50,
     letterSpacing: 3,
     textTransform: "uppercase",
   },
   input: {
-    backgroundColor: "#1A1A1A", // Dark Grey for inputs
+    backgroundColor: "#1A1A1A",
     color: "#FFFFFF",
     padding: 18,
     borderRadius: 8,
     marginBottom: 15,
     fontSize: 16,
     borderWidth: 1,
-    borderColor: "#FF8C00", // Orange border
+    borderColor: "#FF8C00",
   },
   loginButton: {
-    backgroundColor: "#FF8C00", // Orange Button
+    backgroundColor: "#FF8C00",
     padding: 18,
     borderRadius: 8,
     alignItems: "center",
