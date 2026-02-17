@@ -46,4 +46,17 @@ export const adminService = {
       throw error;
     }
   },
+
+  verifyQuest: async (childId: string, questId: string, approve: boolean) => {
+    const response = await fetch(`${API_BASE_URL}/verify`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        childId,
+        questId,
+        status: approve ? "VERIFIED" : "PENDING", // Rejecting sends it back to 'PENDING'
+      }),
+    });
+    return response.ok;
+  },
 };

@@ -66,7 +66,7 @@ export default function MainAppAdminScreen({ navigation }: any) {
     <TouchableOpacity
       style={styles.childCard}
       onPress={() =>
-        navigation.navigate("CreateQuest", {
+        navigation.navigate("ChildDashboardScreen", {
           childId: item.id,
           childName: item.name,
         })
@@ -111,7 +111,7 @@ export default function MainAppAdminScreen({ navigation }: any) {
 
           <TouchableOpacity
             style={styles.navItem}
-            onPress={() => navigation.navigate("VerifyQuests")}
+            onPress={() => navigation.navigate("VerifyQuestsScreen")}
           >
             <MaterialCommunityIcons
               name="check-decagram"
@@ -119,7 +119,7 @@ export default function MainAppAdminScreen({ navigation }: any) {
               color="#FF8C00"
             />
             <View style={styles.badge}>
-              <Text style={styles.badgeText}>3</Text>
+              <Text style={styles.badgeText}>69</Text>
             </View>
           </TouchableOpacity>
 
